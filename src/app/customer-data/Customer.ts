@@ -1,5 +1,5 @@
-export class Customer {
-    id: number;
+export interface Customer {
+    uuid: string;
     name: string;
     address: string;
     phoneNumber: string;

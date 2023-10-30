@@ -11,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomerService } from './customer.service';
+import { MatPaginatorModule } from '@angular/material/paginator'; // Import MatPaginatorModule
+
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { CustomerService } from './customer.service';
     BrowserModule,
     BrowserAnimationsModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]
