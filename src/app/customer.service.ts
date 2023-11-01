@@ -1,8 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Customer } from './customer-data/Customer';
-import { Pageable } from './customer-data/pageable.interface';
+import { Customer } from './customer-data/customer';
 
 
 @Injectable({
@@ -18,7 +17,7 @@ export class CustomerService {
     })
   }
 
-  getCustomers(): Observable<Pageable<Customer>> {
-    return this.httpclient.get<Pageable<Customer>>('http://localhost:8080/customer/list');
+  getCustomers(): Observable<Customer> {
+    return this.httpclient.get<Customer>('http://localhost:8080/customer/list');
   }
 }

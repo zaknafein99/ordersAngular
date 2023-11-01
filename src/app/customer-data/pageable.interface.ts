@@ -1,5 +1,7 @@
-export interface Pageable<T> {
-    content: T[];
+import { Customer } from "./customer";
+
+export interface Pageable {
+    content: Customer[];
     pageable: {
       sort: {
         sorted: boolean;

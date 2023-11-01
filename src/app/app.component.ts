@@ -1,9 +1,7 @@
-import { Component } from '@angular/core';
-import { Customer } from './customer-data/Customer';
-import { CustomerService } from './customer.service';
-import { Pageable } from './customer-data/pageable.interface';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { Component, OnInit } from '@angular/core';
+import { Customer, CustomerResponse } from './customer-data/customer';
+import { CustService } from './customer-data/cust.service';
+import { TableLazyLoadEvent } from 'primeng/table';
 
 
 @Component({
@@ -13,11 +11,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 })
 export class AppComponent {
   title = 'angular1';
-  listCustomers!: Customer[];
-  datasource: any;
+  
 
-  constructor(private customerService: CustomerService) { }
-
-  ngOnInit() {
-  }
+  
 }
