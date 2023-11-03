@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { CustomerComponent } from './customer-data/customer.component';
+import { ItemModule } from './item/item.module';
 
 
 
@@ -26,7 +27,8 @@ import { CustomerComponent } from './customer-data/customer.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    TableModule
+    TableModule,
+    ItemModule
   ],
   bootstrap: [AppComponent]
 })
