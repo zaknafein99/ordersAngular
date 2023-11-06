@@ -35,6 +35,7 @@ export class CustomerComponent {
                 this.loading = false;
                 this.listCustomers = response.content;
                 this.totalElements = response.totalElements;
+                console.log(this.listCustomers);
             }
         )
     }

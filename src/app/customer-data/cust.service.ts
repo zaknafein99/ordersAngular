@@ -17,7 +17,7 @@ export class CustService {
   }
 
   getCustomers(pageNumber: number, pageSize: number): Observable<CustomerResponse>{
-    return this.http.get<CustomerResponse>(`http://localhost:8080/customer/list?page=${pageNumber}&size=${pageSize}`);
+    return this.http.get<CustomerResponse>(`http://localhost:8080/customer/list?size=${pageSize}&page=${pageNumber}`);
   }
 
 }

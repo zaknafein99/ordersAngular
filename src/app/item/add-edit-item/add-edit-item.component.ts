@@ -13,6 +13,7 @@ export class AddEditItemComponent {
 
   @Input() displayAddModal: boolean = true;
   @Output() clickClose: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() clickAdd: EventEmitter<any> = new EventEmitter<any>();
 
   itemForm = this.fb.group({
     name: ['', Validators.required],
@@ -42,6 +43,7 @@ export class AddEditItemComponent {
         console.log(response);
         this.itemForm.reset();
         this.clickClose.emit(true);
+        this.clickAdd.emit(response);
       }
     )
   }

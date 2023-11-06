@@ -38,4 +38,8 @@ export class ItemComponent {
     this.displayAddModal = !isClosed;
   }
 
+  saveProductToList(newData: any) {
+    this.loadItems({first: 0, rows: 10});
+  }
+
 }
