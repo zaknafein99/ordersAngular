@@ -1,0 +1,40 @@
+<div class="card flex justify-content-center">
+    <p-dialog header="Header" [(visible)]="displayAddModal" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+        <form [formGroup]="itemForm">
+            <div class="field">
+                <label class="block" for="name">Producto</label>
+                <input type="text" pInputText id="name" formControlName="name"/>
+                <small class="p-error block" *ngIf="itemForm.get('name').errors?.required && itemForm.get('name').touched">El nombre es requerido</small>
+            </div>
+            <div class="field">
+                <label class="block" for="description">Descripción</label>
+                <input type="text" pInputText id="description" formControlName="description"/>
+            </div>
+            <div class="field">
+                <label class="block" for="price">Precio</label>
+                <p-inputNumber id="price" formControlName="price"></p-inputNumber>
+                <small class="p-error block" *ngIf="itemForm.get('price').invalid && itemForm.get('price').touched">El precio es requerido</small>
+            </div>
+            <div class="field">
+                <label class="block" for="quantity">Cantidad</label>
+                <p-inputNumber id="quantity" formControlName="quantity"></p-inputNumber>
+            </div>
+            <div class="field">
+                <label class="block" id="category">Categoria</label>
+                <input type="text" pInputText id="category" formControlName="category"/>
+            </div>
+        </form>
+        <ng-template pTemplate="footer">
+            <p-button
+                (onClick)="closeModal()"
+                label="Cancelar"
+                styleClass="p-button-text">
+            </p-button>
+            <p-button
+                (onClick)="addItem()"
+                label="Agregar" [disabled]="!itemForm.valid"
+                styleClass="p-button-text">
+            </p-button>
+        </ng-template>
+    </p-dialog>
+</div>

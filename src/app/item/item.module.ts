@@ -5,8 +5,9 @@ import { TableModule } from 'primeng/table';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-
-
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { AddEditItemModule } from './add-edit-item/add-edit-item.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,10 @@ import { BrowserModule } from '@angular/platform-browser';
     TableModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    BrowserModule
+    BrowserModule,
+    ButtonModule,
+    DialogModule,
+    AddEditItemModule
   ],
   exports: [
     ItemComponent

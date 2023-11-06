@@ -11,7 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
 import { CustomerComponent } from './customer-data/customer.component';
 import { ItemModule } from './item/item.module';
-
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+import { ToolbarModule } from 'primeng/toolbar';
+import { FileUploadModule } from 'primeng/fileupload';
 
 
 @NgModule({
@@ -21,15 +24,19 @@ import { ItemModule } from './item/item.module';
     ServersComponent,
     WarningAlertComponent,
     SuccessAlertComponent,
-    CustomerComponent
+    CustomerComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     TableModule,
-    ItemModule
+    ItemModule,
+    ToastModule,
+    ToolbarModule,
+    FileUploadModule
   ],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

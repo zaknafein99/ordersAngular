@@ -1,4 +1,8 @@
-<div>
+<div class="flex justify-content-between">
+  <h2>Productos</h2>
+  <p-button label="Agregar producto" (onClick)="showAddModal()"></p-button>
+</div>
+<div class="flex">
     <p-table [value] = "listItems" 
       [paginator]="true" 
       [rows]="10" 
@@ -27,3 +31,6 @@
       </ng-template>
     </p-table>
   </div>
+<app-add-edit-item [displayAddModal]="displayAddModal"
+  (clickClose)="hideAddModal($event)" ></app-add-edit-item>
+  

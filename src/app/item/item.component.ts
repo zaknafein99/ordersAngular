@@ -15,6 +15,7 @@ export class ItemComponent {
     datasource: any;
     item: Item;
     loading: boolean = true;
+    displayAddModal: boolean = false;
 
   constructor(private itemService: ItemService) { }
 
@@ -28,5 +29,13 @@ export class ItemComponent {
         }
     )
 }
+
+  showAddModal() {
+    this.displayAddModal = true;
+  }
+
+  hideAddModal(isClosed: boolean) {
+    this.displayAddModal = !isClosed;
+  }
 
 }
