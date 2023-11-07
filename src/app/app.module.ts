@@ -14,7 +14,7 @@ import { ItemModule } from './item/item.module';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { ToolbarModule } from 'primeng/toolbar';
-import { FileUploadModule } from 'primeng/fileupload';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -34,7 +34,7 @@ import { FileUploadModule } from 'primeng/fileupload';
     ItemModule,
     ToastModule,
     ToolbarModule,
-    FileUploadModule
+    FormsModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

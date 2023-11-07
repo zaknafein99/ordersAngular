@@ -20,4 +20,8 @@ export class CustService {
     return this.http.get<CustomerResponse>(`http://localhost:8080/customer/list?size=${pageSize}&page=${pageNumber}`);
   }
 
+  getCustomersByPhone(phone: string): Observable<CustomerResponse> {
+    return this.http.get<CustomerResponse>(`http://localhost:8080/customer/search_phone/${phone}`);
+}
+
 }

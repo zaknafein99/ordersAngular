@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ItemService } from '../item.service';
 import { Item } from '../item';
+import { MessageService } from 'primeng/api';
 
 
 @Component({
@@ -23,9 +24,10 @@ export class AddEditItemComponent {
     category: ['']
   });
 
-  constructor(private fb: FormBuilder, private itemService: ItemService ) { }
+  constructor(private fb: FormBuilder, private itemService: ItemService, private messageService: MessageService ) { }
 
   closeModal() {
+    this.itemForm.reset();
     this.clickClose.emit(true);
   }
 
@@ -41,9 +43,13 @@ export class AddEditItemComponent {
     this.itemService.saveItem(item).subscribe(
       (response) => {
         console.log(response);
-        this.itemForm.reset();
-        this.clickClose.emit(true);
         this.clickAdd.emit(response);
+        this.closeModal();
+        this.messageService.add({severity:'success', summary:'Success', detail:'Item guardado correctamente'});
+      },
+      (error) => {
+        console.log(error);
+        this.messageService.add({severity:'error', summary:'Error', detail:'Error al guardar el item' + error});
       }
     )
   }

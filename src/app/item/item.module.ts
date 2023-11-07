@@ -8,6 +8,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { AddEditItemModule } from './add-edit-item/add-edit-item.module';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -21,10 +23,14 @@ import { AddEditItemModule } from './add-edit-item/add-edit-item.module';
     BrowserModule,
     ButtonModule,
     DialogModule,
-    AddEditItemModule
+    AddEditItemModule,
+    ToastModule
   ],
   exports: [
     ItemComponent
+  ],
+  providers: [
+    MessageService
   ]
 })
 export class ItemModule { }
