@@ -15,7 +15,8 @@ export class ItemComponent {
     datasource: any;
     item: Item;
     loading: boolean = true;
-    displayAddModal: boolean = false;
+    displayAddEditModal: boolean = false;
+    selectedItem: Item = null;
 
   constructor(private itemService: ItemService) { }
 
@@ -31,15 +32,21 @@ export class ItemComponent {
 }
 
   showAddModal() {
-    this.displayAddModal = true;
+    this.displayAddEditModal = true;
+    this.selectedItem = null;
   }
 
   hideAddModal(isClosed: boolean) {
-    this.displayAddModal = !isClosed;
+    this.displayAddEditModal = !isClosed;
   }
 
-  saveProductToList(newData: any) {
+  saveOrUpdateProductList(newData: any) {
     this.loadItems({first: 0, rows: 10});
+  }
+
+  showEditItemModal(item: Item) {
+    this.displayAddEditModal = true;
+    this.selectedItem = item;
   }
 
 }

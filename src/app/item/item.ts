@@ -2,11 +2,12 @@ import { Sort } from "@angular/material/sort";
 import { Pageable } from "./pageable.interface";
 
 export interface Item {
-    "name": String,
-    "description": String,
+    "id": number,
+    "name": string,
+    "description": string,
     "price": number,
     "quantity": number,
-    "category": String
+    "category": string
 }
 
 export interface ItemResponse {

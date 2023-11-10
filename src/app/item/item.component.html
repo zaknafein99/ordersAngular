@@ -17,6 +17,7 @@
           <th>Descripcion</th>
           <th>Precio</th>
           <th>Cantidad</th>
+          <th></th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-item>
@@ -26,13 +27,21 @@
           <td>{{item.description}}</td>
           <td>{{item.price}}</td>
           <td>{{item.quantity}}</td>
-
+          <td
+            pButton
+            icon="pi pi-pencil"
+            class="p-button-rounded p-button-success mr-2"
+            (click)="showEditItemModal(item)"
+            ></td>
         </tr>
       </ng-template>
     </p-table>
   </div>
-<app-add-edit-item [displayAddModal]="displayAddModal"
-  (clickClose)="hideAddModal($event)" (clickAdd)="saveProductToList($event)"></app-add-edit-item>
+<app-add-edit-item 
+  [displayAddEditModal]="displayAddEditModal"
+  [selectedItem] = "selectedItem"
+  (clickClose)="hideAddModal($event)" 
+  (clickAddEdit)="saveOrUpdateProductList($event)"></app-add-edit-item>
 
   <p-toast position="bottom-right"></p-toast>
   

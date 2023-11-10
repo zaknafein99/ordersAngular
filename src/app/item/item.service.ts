@@ -20,8 +20,13 @@ export class ItemService {
     return this.http.get<ItemResponse>(`http://localhost:8080/item/list?page=${pageNumber}&size=${pageSize}`);
   }
 
-  saveItem(item: Item): Observable<Item> {
-    return this.http.post<Item>('http://localhost:8080/item', item, this.httpOptions);
+  saveEditItem(item: Item, modalType: string): Observable<Item> {
+    if(modalType === 'Agregar') {
+      return this.http.post<Item>('http://localhost:8080/item', item, this.httpOptions);
+    } else {
+      return this.http.put<Item>(`http://localhost:8080/item/${item.id}`, item, this.httpOptions);
+    }
+    
   }
 
 }
