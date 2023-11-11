@@ -15,7 +15,10 @@ export interface CustomerResponse {
     empty: boolean;
 }
 export interface Customer {
+    id: number;
     name: string;
     address: string;
     phoneNumber: string;
+    type: string;
+    state: string;
 }

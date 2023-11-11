@@ -9,13 +9,12 @@ import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { TableModule } from 'primeng/table';
-import { CustomerComponent } from './customer-data/customer.component';
 import { ItemModule } from './item/item.module';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { ToolbarModule } from 'primeng/toolbar';
 import { FormsModule } from '@angular/forms';
-
+import { CustomerModule } from './customer/customer.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,6 @@ import { FormsModule } from '@angular/forms';
     ServersComponent,
     WarningAlertComponent,
     SuccessAlertComponent,
-    CustomerComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     ItemModule,
     ToastModule,
     ToolbarModule,
-    FormsModule
+    FormsModule,
+    CustomerModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

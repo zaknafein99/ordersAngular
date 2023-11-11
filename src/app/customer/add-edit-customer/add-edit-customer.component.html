@@ -1,0 +1,40 @@
+<div class="card flex justify-content-center">
+    <p-dialog 
+        header="{{ modalType }} Producto" 
+        [(visible)]="displayAddEditModal" 
+        [modal]="true" [style]="{ width: '50vw' }" 
+        [draggable]="false" 
+        [resizable]="false"
+        (onHide)="closeModal"
+        >
+        <form [formGroup]="customerForm">
+            <div class="field">
+                <label class="block" for="name">Nombre</label>
+                <input type="text" pInputText id="name" formControlName="name"/>
+                <small class="p-error block" *ngIf="customerForm.get('name').errors?.required && customerForm.get('name').touched">El nombre es requerido</small>
+            </div>
+            <div class="field">
+                <label class="block" for="address">Descripción</label>
+                <input type="text" pInputText id="address" formControlName="address"/>
+            </div>
+            <div class="field">
+                <label class="block" for="phoneNumber">Telefono</label>
+                <input type="text" pInputText id="phoneNumber" formControlName="phoneNumber"/>
+                <small class="p-error block" *ngIf="customerForm.get('phoneNumber').invalid && customerForm.get('phoneNumber').touched">El telefono es requerido</small>
+            </div>
+        </form>
+        <ng-template pTemplate="footer">
+            <p-button
+                (onClick)="closeModal()"
+                label="Cancelar"
+                styleClass="p-button-text">
+            </p-button>
+            <p-button
+                (onClick)="addEditCustomer()"
+                label="{{ modalType }}"
+                label="Agregar" [disabled]="!customerForm.valid"
+                styleClass="p-button-text">
+            </p-button>
+        </ng-template>
+    </p-dialog>
+</div>
