@@ -14,7 +14,7 @@
                 <small class="p-error block" *ngIf="customerForm.get('name').errors?.required && customerForm.get('name').touched">El nombre es requerido</small>
             </div>
             <div class="field">
-                <label class="block" for="address">Descripción</label>
+                <label class="block" for="address">Dirección</label>
                 <input type="text" pInputText id="address" formControlName="address"/>
             </div>
             <div class="field">
@@ -22,6 +22,14 @@
                 <input type="text" pInputText id="phoneNumber" formControlName="phoneNumber"/>
                 <small class="p-error block" *ngIf="customerForm.get('phoneNumber').invalid && customerForm.get('phoneNumber').touched">El telefono es requerido</small>
             </div>
+            <div class="field">
+                <label class="block" for="type">Tipo de cliente</label>
+                <input type="text" pInputText id="type" formControlName="type"/>
+            </div>
+            <div class="field">
+                <label class="block" for="state">Estado</label>
+                <input type="text" pInputText id="state" formControlName="state"/>
+            </div>            
         </form>
         <ng-template pTemplate="footer">
             <p-button

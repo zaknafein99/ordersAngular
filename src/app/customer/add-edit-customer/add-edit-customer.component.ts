@@ -64,12 +64,12 @@ export class AddEditCustomerComponent implements OnInit, OnChanges {
         console.log(response);
         this.clickAddEdit.emit(response);
         this.closeModal();
-        const msg = this.modalType === 'Agregar' ? 'Item agregado correctamente' : 'Item editado correctamente';
+        const msg = this.modalType === 'Agregar' ? 'Cliente agregado correctamente' : 'Cliente editado correctamente';
         this.messageService.add({severity:'success', summary:'Success', detail:msg});
       },
       (error) => {
         console.log(error);
-        this.messageService.add({severity:'error', summary:'Error', detail:'Error al guardar el item' + error});
+        this.messageService.add({severity:'error', summary:'Error', detail:'Error al guardar el Cliente' + error});
       }
     )
   }

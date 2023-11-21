@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ItemService } from '../item.service';
 import { Item } from '../item';
@@ -39,7 +39,7 @@ export class AddEditItemComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    
+
   }
 
   closeModal() {
