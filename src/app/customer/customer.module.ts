@@ -8,8 +8,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { ToastModule } from 'primeng/toast';
-import { MessageService } from 'primeng/api';
+import { MessageService, ConfirmationService } from 'primeng/api';
 import { AddEditCustomerModule } from './add-edit-customer/add-edit-customer.module';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 
 @NgModule({
@@ -25,13 +26,15 @@ import { AddEditCustomerModule } from './add-edit-customer/add-edit-customer.mod
     ButtonModule,
     DialogModule,
     ToastModule,
-    AddEditCustomerModule
+    AddEditCustomerModule,
+    ConfirmDialogModule
   ],
   exports: [
     CustomerComponent
   ],
   providers: [
-    MessageService
+    MessageService,
+    ConfirmationService
   ]
 })
 export class CustomerModule { }

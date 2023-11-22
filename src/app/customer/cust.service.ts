@@ -24,12 +24,16 @@ export class CustService {
     return this.http.get<CustomerResponse>(`http://localhost:8080/customer/search_phone/${phone}`);
 }
 
-saveEditCustomer(customer: Customer, modalType: string): Observable<Customer> {
-  if (modalType === 'Agregar') {
-    return this.http.post<Customer>(`http://localhost:8080/customer`, customer, this.httpOptions);
-  } else {
-    return this.http.put<Customer>(`http://localhost:8080/customer/${customer.id}`, customer, this.httpOptions);
+  saveEditCustomer(customer: Customer, modalType: string): Observable<Customer> {
+    if (modalType === 'Agregar') {
+      return this.http.post<Customer>(`http://localhost:8080/customer`, customer, this.httpOptions);
+    } else {
+      return this.http.put<Customer>(`http://localhost:8080/customer/${customer.id}`, customer, this.httpOptions);
+    }
   }
-}
+
+  deleteCustomer(customer: Customer): Observable<Customer> {
+    return this.http.delete<Customer>(`http://localhost:8080/customer/${customer.id}`, this.httpOptions);
+  }
 
 }

@@ -30,7 +30,14 @@
               icon="pi pi-pencil"
               class="p-button-rounded p-button-success mr-2"
               (click)="showEditCustomerModal(customer)"
-              ></td>
+              >
+            </td>
+            <td
+              pButton
+              icon="pi pi-trash"
+              class="p-button-rounded p-button-danger"
+              (click)="deleteCustomer(customer)"
+              >
           </tr>
         </ng-template>
       </p-table>
@@ -41,5 +48,10 @@
     (clickClose)="hideAddModal($event)" 
     (clickAddEdit)="saveOrUpdateCustomerList($event)"></app-add-edit-customer>
   
+    <div class="card flex justify-content-center gap-2">
+      <p-toast></p-toast>
+      <p-confirmDialog header="Eliminar" [style]="{width: '50vw'}"></p-confirmDialog>
+      <p-button (click)=" deleteCustomer(customer) " icon="pi pi-check" label="Confirmado"></p-button>
+      <!-- <p-button (click)="confirm2()" icon="pi pi-times" label="Delete" class="p-button-danger"></p-button>  -->
+    </div>
     <p-toast position="bottom-right"></p-toast>
-    
