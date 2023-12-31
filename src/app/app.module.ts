@@ -15,6 +15,8 @@ import { MessageService } from 'primeng/api';
 import { ToolbarModule } from 'primeng/toolbar';
 import { FormsModule } from '@angular/forms';
 import { CustomerModule } from './customer/customer.module';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { CustomerModule } from './customer/customer.module';
     ServersComponent,
     WarningAlertComponent,
     SuccessAlertComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
